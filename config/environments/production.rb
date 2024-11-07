@@ -51,6 +51,7 @@ Rails.application.configure do
   # Include generic and useful information about system operation, but avoid logging too much
   # information to avoid inadvertent exposure of personally identifiable information (PII).
   config.log_level = :info
+  config.action_mailer.default_url_options = { :host => "security-wall-28649d183090.herokuapp.com/" }
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
