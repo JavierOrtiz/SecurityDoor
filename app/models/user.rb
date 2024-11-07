@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
-  after_create :send_welcome_email
+  # after_create :send_welcome_email
   # has_rich_text :bio
 
   validates_presence_of :full_name
