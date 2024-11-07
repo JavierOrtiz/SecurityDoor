@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     end
     resources :messages, only: [:show, :create]
     resources :reports, only: [:index, :show]
+    resource :credits, only: [:show]
   end
 end
