@@ -1,7 +1,5 @@
 module Api
   class CreditsController < Api::ApplicationController
-    skip_before_action :authenticate
-
     def show
       total_available = rand(1000)
       render json: {
