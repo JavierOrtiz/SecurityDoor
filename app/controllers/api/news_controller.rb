@@ -1,7 +1,5 @@
 module Api
   class NewsController < Api::ApplicationController
-    skip_before_action :authenticate
-
     def show
       total_news_items = 100
       news_items = (1..total_news_items).map do |i|
