@@ -1,6 +1,5 @@
 module Api
   class MessagesController < Api::ApplicationController
-    skip_before_action :authenticate
     def create
       if params[:message].present?
         message = Report.create(content: params[:message])

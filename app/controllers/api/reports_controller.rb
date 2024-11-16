@@ -1,6 +1,5 @@
 module Api
   class ReportsController < Api::ApplicationController
-    skip_before_action :authenticate
     def index
       @reports = Report.where(analyzed: true).order(created_at: :desc)
       render json: @reports.as_json(only: %w[content is_scam recommendations reasons url domain entity subject])
