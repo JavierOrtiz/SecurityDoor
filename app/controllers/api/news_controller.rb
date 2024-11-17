@@ -1,6 +1,6 @@
 module Api
   class NewsController < Api::ApplicationController
-    def show
+    def index
       total_news_items = 100
       news_items = (1..total_news_items).map do |i|
         {
@@ -25,6 +25,15 @@ module Api
         total_pages: total_pages,
         total_items: total_news_items,
         news: paginated_news_items
+      }
+    end
+
+    def show
+      render json: {
+        id: params[:id],
+        title: Faker::Lorem.sentence,
+        body: Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false),
+        published_at: Faker::Time.backward(days: 14, period: :evening)
       }
     end
   end

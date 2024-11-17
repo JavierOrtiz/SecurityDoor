@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     resources :messages, only: [:show, :create]
     resources :reports, only: [:index, :show]
     resource :credits, only: [:show]
-    resource :news, only: [:index, :show]
+    resources :news, only: [:index, :show]
   end
 end
